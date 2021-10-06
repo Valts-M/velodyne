@@ -168,7 +168,7 @@ void VelodyneLaserScan::recvCallback(const sensor_msgs::msg::PointCloud2::Shared
     scan->range_min = 0.0;
     scan->range_max = 200.0;
     scan->time_increment = 0.0;
-    scan->ranges.resize(kSize, INFINITY);
+    scan->ranges.resize(kSize + 1, INFINITY);
 
     if ((offset_x == 0) &&
       (offset_y == 4) &&
