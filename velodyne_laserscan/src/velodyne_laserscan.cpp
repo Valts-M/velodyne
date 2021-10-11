@@ -74,7 +74,7 @@ VelodyneLaserScan::VelodyneLaserScan(const rclcpp::NodeOptions & options)
   resolution_ = declare_parameter("resolution", 0.007, resolution_desc);
 
   sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-    "velodyne_points", rclcpp::QoS(10),
+    "points", rclcpp::QoS(10),
     std::bind(&VelodyneLaserScan::recvCallback, this, std::placeholders::_1));
   pub_ = this->create_publisher<sensor_msgs::msg::LaserScan>("scan", 10);
 }
